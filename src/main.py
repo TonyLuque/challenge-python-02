@@ -5,7 +5,19 @@ SYMBOLS = list('!"#$%&\'()*+,-./:;?@[]^_`{|}~')
 
 
 def generate_password():
-    # Start coding here
+   
+    password = []
+    longPass = randint(8,16)
+    for i in range(0, longPass):
+        password.append(chr(randint(33,126)))
+
+    # Se asegura de que siempre halla por lo menos un número, un simbolo, una mayúscula y una minúscula
+    password[longPass - 1 ] = chr(randint(48,57))
+    password[longPass - 2 ] = SYMBOLS[randint(0,len(SYMBOLS)-1)] 
+    password[0] = chr(randint(97,122))
+    password[1] = chr(randint(65,90))
+    
+    return password
 
 
 def validate(password):
