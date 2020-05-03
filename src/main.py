@@ -1,6 +1,6 @@
 # Resolve the problem!!
 import string
-from random import randint
+from random import randint, shuffle
 
 SYMBOLS = list('!"#$%&\'()*+,-./:;?@[]^_`{|}~')
 
@@ -17,7 +17,7 @@ def generate_password():
     password[longPass - 2 ] = SYMBOLS[randint(0,len(SYMBOLS)-1)] 
     password[0] = chr(randint(97,122))
     password[1] = chr(randint(65,90))
-    
+    shuffle(password)
     return ''.join(password)
 
 
