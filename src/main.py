@@ -1,5 +1,6 @@
 # Resolve the problem!!
 import string
+from random import randint
 
 SYMBOLS = list('!"#$%&\'()*+,-./:;?@[]^_`{|}~')
 
@@ -17,7 +18,7 @@ def generate_password():
     password[0] = chr(randint(97,122))
     password[1] = chr(randint(65,90))
     
-    return password
+    return ''.join(password)
 
 
 def validate(password):
